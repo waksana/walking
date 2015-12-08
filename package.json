@@ -1,0 +1,23 @@
+{
+  "name": "walk-object",
+  "version": "0.0.1",
+  "description": "walk through the object",
+  "main": "walk.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waksana/walk-object.git"
+  },
+  "keywords": [
+    "walk",
+    "object"
+  ],
+  "author": "waksana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waksana/walk-object/issues"
+  },
+  "homepage": "https://github.com/waksana/walk-object#readme"
+}

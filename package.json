@@ -1,23 +1,15 @@
 {
-  "name": "walk-object",
+  "name": "walking",
   "version": "0.0.1",
   "description": "walk through the object",
-  "main": "walk.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/waksana/walk-object.git"
-  },
+  "repository": "waksana/walking",
   "keywords": [
     "walk",
     "object"
   ],
-  "author": "waksana",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/waksana/walk-object/issues"
-  },
-  "homepage": "https://github.com/waksana/walk-object#readme"
+  "license": "MIT"
 }

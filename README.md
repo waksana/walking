@@ -1,8 +1,19 @@
 # walk-object
-object walking serial
 
-```javascript
-var walk = require('walk-object');
+walk through the object
+
+遍历对象
+
+## Installation
+
+```
+$ npm install walking
+```
+
+## Example
+
+```js
+var walking = require('walking');
 
 var object_to_walk = {
   a: 1,
@@ -10,7 +21,7 @@ var object_to_walk = {
   c: [2, 4, 6, 8]
 };
 
-var cond_fn = function(o) {
+var cond = function(o) {
   if(o.length) {
     if(o.length == 3) {
       //1 means the right object
@@ -33,6 +44,17 @@ var handler = function(o) {
   console.log(o.join(', '));
 };
 
-walk(object_to_walk, cond_fn, handler); // => 2, 4, 6, 8, 10
+walking(object_to_walk, cond, handler); // => 2, 4, 6, 8, 10
+
 //after walk object_to_walk.c = [2, 4, 6, 8, 10]
 ```
+
+## API
+
+### walking(object, cond_fn, handler_fn)
+
+遍历object对象，根据cond_fn找出需要的子孙，使用handler_fn处理
+
+# License
+
+MIT

@@ -1,4 +1,4 @@
-# walk-object
+# walking
 
 walk through the object
 
@@ -15,45 +15,26 @@ $ npm install walking
 ```js
 var walking = require('walking');
 
-var object_to_walk = {
-  a: 1,
-  b: [1, 3, 5],
-  c: [2, 4, 6, 8]
-};
+const obj = {a: {c: [1, 'd', undefined]}, b: [{e: {f: ['g']}}, [1, {h:1}, {i:2}]]}
 
-var cond = function(o) {
-  if(o.length) {
-    if(o.length == 3) {
-      //1 means the right object
-      return 1;
-    }
-    else {
-      //-1 means stop search in this branch
-      return -1;
-    }
-  }
-  else {
-    //0 means search deep
-    //you can return a promise
-    return Promise.resolve(0);
-  }
-};
+var walk = walking(obj);
 
-var handler = function(o) {
-  o.push(10);
-  console.log(o.join(', '));
-};
+//the root object
+walk.next() //==> {a: {c: [1, 'd', undefined]}, b: [{e: {f: ['g']}}, [1, {h:1}, {i:2}]]}
 
-walking(object_to_walk, cond, handler); // => 2, 4, 6, 8, 10
+//search deeper
+walk.next(true) // ==> {c: [1, 'd', undefined]}
+walk.next(true) // ==> [1, 'd', undefined]
 
-//after walk object_to_walk.c = [2, 4, 6, 8, 10]
+//skip the object
+walk.next(false) // ==> [{e: {f: ['g']}}, [1, {h:1}, {i:2}]]
 ```
 
 ## API
 
-### walking(object, cond_fn, handler_fn)
+### walking(object)
 
-遍历object对象，根据cond_fn找出需要的子孙，使用handler_fn处理
+遍历object对象返回生成器
 
 # License
 

@@ -11,8 +11,5 @@
     "walk",
     "object"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "co": "^4.6.0"
-  }
+  "license": "MIT"
 }

@@ -23,11 +23,10 @@ var walk = walking(obj);
 walk.next() //==> {a: {c: [1, 'd', undefined]}, b: [{e: {f: ['g']}}, [1, {h:1}, {i:2}]]}
 
 //search deeper
-walk.next(true) // ==> {c: [1, 'd', undefined]}
-walk.next(true) // ==> [1, 'd', undefined]
+walk.next() // ==> {c: [1, 'd', undefined]}
+walk.next() // ==> [1, 'd', undefined]
+walk.next() // ==> 1
 
-//skip the object
-walk.next(false) // ==> [{e: {f: ['g']}}, [1, {h:1}, {i:2}]]
 ```
 
 ## API

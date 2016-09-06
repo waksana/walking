@@ -11,10 +11,13 @@ var obj = {
 var walk = walking(obj);
 
 walk.next();
-assert.equal(obj.a, walk.next(true).value);
-assert.equal(obj.b, walk.next(true).value);
-assert.equal(obj.c, walk.next(false).value);
-assert.equal(2, walk.next(true).value);
+assert.equal(obj.a, walk.next().value);
+assert.equal(obj.b, walk.next().value);
+assert.equal(obj.b[0], walk.next().value);
+assert.equal(obj.b[1], walk.next().value);
+assert.equal(obj.b[2], walk.next().value);
+assert.equal(obj.c, walk.next().value);
+assert.equal(2, walk.next().value);
 assert.equal(4, walk.next().value);
 assert.equal(6, walk.next().value);
 assert.equal(8, walk.next().value);

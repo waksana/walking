@@ -1,7 +1,6 @@
 
 module.exports = function* walk(object) {
-  var search = yield object;
-  if(!search) return;
+  yield object;
 
   if(object instanceof Object)
     object = Object.keys(object).map(key => object[key]);

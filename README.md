@@ -33,7 +33,13 @@ walk.next() // ==> 1
 
 ### walking(object)
 
+get a generator which yields every piece of an object or array
+
 遍历object对象返回生成器
+
+### walk.next(true)
+
+skip the last returnd value if it is a object
 
 # License
 

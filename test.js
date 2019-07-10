@@ -21,3 +21,11 @@ assert.equal(2, walk.next().value);
 assert.equal(4, walk.next().value);
 assert.equal(6, walk.next().value);
 assert.equal(8, walk.next().value);
+
+walk = walking(obj);
+
+walk.next();
+assert.equal(obj.a, walk.next().value);
+assert.equal(obj.b, walk.next().value);
+assert.equal(obj.c, walk.next(true).value);
+assert(walk.next(true).done);
